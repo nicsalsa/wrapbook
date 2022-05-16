@@ -6,6 +6,7 @@ import { auth } from '../../firebase';
 
 
 const Nav = () => {
+  // eslint no-use-before-define: "error"
   const [user, setUser] = useState(user)
   const currentPathIsLogin = useMatch('/login');
   const currentPathIsSignup = useMatch('/signup');

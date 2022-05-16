@@ -8,6 +8,7 @@ import Nav from "./organisms/Nav";
 
 
 const Home = () => {
+  // eslint-disable-next-line no-unused-vars
   const [user, setUser] = useState({})
 
   useEffect(() => {
