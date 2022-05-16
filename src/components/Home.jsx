@@ -1,7 +1,7 @@
+import { auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { Container, Grid, Text, Themed } from "theme-ui";
-import { auth } from "../firebase";
 import Callout from "./molecules/Callout";
 import ListPeople from "./organisms/ListPeople";
 import Nav from "./organisms/Nav";

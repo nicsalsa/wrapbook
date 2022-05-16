@@ -18,7 +18,7 @@ const SignUp = () => {
       console.log("User signed up:", user);
       setSignupEmail("");
       setSignupPassword("");
-      navigate.push("/");
+      navigate("/");
     } catch (error) {
       console.log(error.message)
     }
@@ -43,7 +43,7 @@ const SignUp = () => {
           }}
           />
         <Input
-          type="text"
+          type="password"
           placeholder="Password..." 
           value={signupPassword} 
           onChange={(e) => setSignupPassword(e.target.value)}

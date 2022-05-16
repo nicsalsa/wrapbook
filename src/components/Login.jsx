@@ -1,12 +1,10 @@
 import React, { useState, useContext } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
-import app from "../firebase.js";
+import {auth} from "../firebase.js";
 import { AuthContext } from "../Auth.js";
 import { Box, Button, Input, Text } from 'theme-ui'
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import LayoutRegister from "./layouts/LayoutRegister.jsx";
-
-const auth = getAuth(app);
 
 const Login = () => {
   const [loginEmail, setLoginEmail] = useState("");
@@ -25,7 +23,7 @@ const Login = () => {
     try {
       const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
       console.log("User logged in:", user);
-      history.push("/");
+      history("/");
 
     } catch (error) {
       console.log(error.message)
@@ -51,7 +49,7 @@ const Login = () => {
           }}
           />
         <Input
-          type="text"
+          type="password"
           placeholder="Password..." 
           value={loginPassword} 
           onChange={(e) => setLoginPassword(e.target.value)}
