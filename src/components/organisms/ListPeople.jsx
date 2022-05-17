@@ -13,7 +13,7 @@ const ListPeople = () => {
 
   const handleJSON = () => {
     const proxiedUrl = 'https://castandcrew.herokuapp.com/people';
-    const url = new URL('http://proxy.hackeryou.com');
+    const url = new URL('https://proxy.hackeryou.com');
     url.search = new URLSearchParams({
       reqUrl: proxiedUrl,
     });
