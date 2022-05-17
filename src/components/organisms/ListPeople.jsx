@@ -11,16 +11,20 @@ const ListPeople = () => {
     handleJSON();
   }, []);
 
-  const handleJSON = async () => {
-    try {
-      const response = await fetch('http://jsonplaceholder.typicode.com/users');
-      const data = await response.json();
-      setWorkers(data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  const handleJSON = () => {
+    const proxiedUrl = 'https://castandcrew.herokuapp.com/people';
+    const url = new URL('http://proxy.hackeryou.com');
+    url.search = new URLSearchParams({
+      reqUrl: proxiedUrl,
+    });
 
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        console.log("Cast and Crew data:", data);
+        setWorkers(data.collection);
+      });
+  }
   // Map through api data to get workers
   const list = workers.map((human) => {
     return (
@@ -52,16 +56,10 @@ const ListPeople = () => {
     )
   });
 
-  const listOfPeople = () => {
-    return (
-      <Container width="100%" height="100%">
-        {list}
-      </Container>
-    )
-  }
-
   return (
-    <>{listOfPeople()}</>
+    <Container width="100%" height="100%">
+      {list}
+    </Container>
   );
 };
 

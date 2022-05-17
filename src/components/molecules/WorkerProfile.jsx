@@ -16,7 +16,7 @@ const WorkerProfile = ({human}) => {
         <Avatar src={"https://placekitten.com/200/200"} mr={6} />
         <Box>
           <Themed.h3>{human.name}</Themed.h3>
-          <Text sx={{fontSize: '13px'}}>{human.company.name} · {human.company.catchPhrase}</Text>
+          <Text sx={{fontSize: '13px'}}>Employee · Human Manufacturing Planner</Text>
         </Box>
       </Flex>
       {/* TODO: This should be a button eventually */}

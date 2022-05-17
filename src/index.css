@@ -2,6 +2,10 @@
   padding: 0;
   margin: 0;
 }
+
+html {
+  background-color: #E5E5E5;
+}
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -9,7 +13,4 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
