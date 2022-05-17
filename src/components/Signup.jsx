@@ -33,7 +33,7 @@ const SignUp = () => {
       <Box as="form" onSubmit={(e) => handleSignup(e)} my={6}>
         <Input 
           type="text" 
-          placeholder="Email..." 
+          placeholder="Enter your email address" 
           value={signupEmail} 
           mb={[4]}
           onChange={(e) => setSignupEmail(e.target.value)} 
@@ -44,7 +44,7 @@ const SignUp = () => {
           />
         <Input
           type="password"
-          placeholder="Password..." 
+          placeholder="Enter a password" 
           value={signupPassword} 
           onChange={(e) => setSignupPassword(e.target.value)}
           sx={{
